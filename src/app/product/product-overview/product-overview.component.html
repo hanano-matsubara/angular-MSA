@@ -1,0 +1,34 @@
+<br />
+<h2>商品一覧</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">商品番号</th>
+      <th scope="col">商品名</th>
+      <th scope="col">詳細</th>
+      <!-- <th scope="col">Handle</th>
+      <th scope="col">Handle</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items; let productId = index">
+      <th scope="row">{{ item.id }}</th>
+      <td>
+        <a [title]="item.name + ' の詳細はこちら '" [routerLink]="item.id">
+          {{ item.name }}
+        </a>
+      </td>
+      <td>{{ item.description }}</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
+

@@ -1,0 +1,20 @@
+<br />
+<h2>ECサイト</h2>
+
+<div class="cart-item" *ngFor="let product of products">
+  <div class="card" style="width: 18rem;">
+    <img src=".\assets\img\picture.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">{{ product.name }}</p>
+      <p class="card-text">{{ product.price | currency }}</p>
+      <button (click)="addToCart(product)">カートに追加</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

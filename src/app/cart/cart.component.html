@@ -1,0 +1,33 @@
+<br />
+<h3>Cart</h3>
+
+<!-- <p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p> -->
+
+<div class="cart-item" *ngFor="let item of items">
+  <div class="card" style="width: 18rem;">
+    <img src=".\assets\img\picture.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text">{{ item.name }}</p>
+      <p class="card-text">{{ item.price | currency }}</p>
+    </div>
+  </div>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <!-- <div>
+    <label for="name"> Name </label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="address"> Address </label>
+    <input id="address" type="text" formControlName="address" />
+  </div> -->
+  <div class="btn-group">
+    <button class="button me-2" routerLink="/">お買い物を続ける</button>
+    <button class="button" type="submit">購入する</button>
+    <!-- type="submit"はコードを見たときに分かりやすくするため？ -->
+  </div>
+</form>
