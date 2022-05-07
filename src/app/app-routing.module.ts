@@ -4,10 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { ProductModule } from './product/product.module';
 const routes: Routes = [
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  // { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '', redirectTo: 'overview', pathMatch: 'full' },
   // { path: '', component: ProductModule },
   // { path: 'topber', component: TopBarComponent },
-  { path: 'cart', component: CartComponent },
+  // { path: 'cart', component: CartComponent },
   // { path: 'shipping', component: ShippingComponent },
 ];
 

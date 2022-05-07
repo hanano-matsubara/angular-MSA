@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+
+import { ProductAlertsComponent } from '../product/product-alerts/product-alerts.component'
+import { error } from '@angular/compiler/src/util';
 // SpringbootのRest APIと通信をする
 
 // providedIn: 'root'がないと表示されない
 @Injectable({ providedIn: 'root' })
 export class ProductService {
 
-  private itemsUrl = '/products/items';  // Web APIのURL
+  private itemsUrl = '/products/list';  // Web APIのURL
   // CALLBACK = 'JSON_CALLBACK'
 
   httpOptions = {
@@ -18,17 +21,18 @@ export class ProductService {
 
   constructor(
     private http: HttpClient,
+    private errorMessage: ProductAlertsComponent,
     ) { }
 
-  /* サーバーから商品データを取得する */
+  /* サーバーから商品データを取得する
+  ** Q:引数にデータ型を入れ、返り値も指定したデータ型の配列にし、HTTP通信を行うべきか
+  ** A:
+  */
+
+
   // Observable<Item[]>
-  getItems(): Observable<any> { 
+  getItems(): Observable<any> {
     return this.http.get(this.itemsUrl)
-    // return this.http.get<Item[]>(this.itemsUrl)
-    //   .pipe(
-    //     tap(items => console.log('fetched items')),
-    //     catchError(this.handleError<Item[]>('getItems', []))
-    //   );
   }
 
   /** IDによりヒーローを取得する。idが見つからない場合は`undefined`を返す。 */
@@ -48,7 +52,7 @@ export class ProductService {
   /** IDによりヒーローを取得する。見つからなかった場合は404を返却する。 */
   findById(id: number): Observable<any> {
     const url = `${this.itemsUrl}/${id}`;
-    debugger
+    // debugger
     return this.http.get(url)
     // .pipe(
     //   tap(_ => console.log(`fetched item id=${id}`)),

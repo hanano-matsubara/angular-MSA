@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+// import { MatDialogModule} from '@angular/material/dialog';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -7,6 +8,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductOverviewComponent } from './product-overview/product-overview.component';
 import { ProductComponent } from './product.component';
 import { ProductService } from '../service/product.service'
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -36,7 +40,14 @@ const routes: Routes = [
     ProductDetailsComponent,
     ProductOverviewComponent
   ],
-  imports: [RouterModule.forChild(routes), CommonModule],
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    // MatDialogModule,
+    FormsModule,
+    BrowserModule,
+    // BrowserAnimationsModule,
+  ],
   providers: [ ProductService ],
   bootstrap: [],
 })

@@ -1,14 +1,18 @@
-<a [routerLink]="['/']">
-  <h1>My Store</h1>
-</a>
+<div class="header-content mx-auto">
+  <div class="title">
+    <a [routerLink]="['/overview']">
+      <h1>Product</h1>
+    </a>
+  </div>
+</div>
 
 <!-- routerLinkはaタグのデフォルト属性だから[]の有無関係なし？ -->
-<a routerLink="/cart" class="button fancy-button"
+<!-- <a routerLink="/cart" class="button fancy-button"
   ><i class="material-icons">shopping_cart</i>Checkout</a
->
-<a routerLink="/overview" class="button fancy-button"
+> -->
+<!-- <a routerLink="/overview" class="button fancy-button"
   ><i class="material-icons">shopping_cart</i>Store</a
->
+> -->
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

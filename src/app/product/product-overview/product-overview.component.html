@@ -12,21 +12,27 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items; let productId = index">
+    <tr *ngFor="let item of items" (click)="onSelect(item)">
       <th scope="row">{{ item.id }}</th>
       <td>
-        <a [title]="item.name + ' の詳細はこちら '" [routerLink]="item.id">
+        <!-- <a [title]="item.name + ' の詳細はこちら '" [routerLink]="item.id">
           {{ item.name }}
-        </a>
+        </a> -->
+        <input type="button" [(ngModel)]="item.name" />
       </td>
       <td>{{ item.description }}</td>
-      
+      <!-- <td>
+        <button (click)="onClick(item.id)">
+          Edit
+        </button>
+      </td> -->
     </tr>
   </tbody>
 </table>
+<!-- <app-product-details [item]="selectedProduct"></app-product-details> -->
 
 
-<!-- 
+<!--
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license

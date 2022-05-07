@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 // 外部APIからデータを取得し、ストリームとしてアプリケーションに提供
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -22,6 +24,9 @@ import { ProductService } from './service/product.service'
     CommonModule,
     // inportすべきなのか定かではない
     ProductModule,
+
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   declarations: [
     AppComponent,

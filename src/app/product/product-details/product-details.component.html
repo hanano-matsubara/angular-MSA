@@ -1,9 +1,31 @@
 <br />
-<h2>Product Details</h2>
+<h2 mat-dialog-title>Product Details</h2>
 
-<div *ngIf="item">
+<div mat-dialog-actions *ngIf="item">
+  <table>
+    <tr>
+      <label>商品名</label>
+      <input type="text" [(ngModel)]="item.name"/>
+    </tr>
+    <tr>
+      <label>価格</label>
+      <input type="text" [(ngModel)]="item.price"/>
+    </tr>
+    <tr>
+      <label>詳細</label>
+      <textarea [(ngModel)]="item.description"></textarea>
+    </tr>
+    <tr>
+      <button mat-raised-button (click)="Save()">onSave</button>
+    </tr>
+  </table>
+
+
+
+  <!--
   <h3>{{ item.name }}</h3>
   <h4>{{ item.price | currency }}</h4>
   <p>{{ item.description }}</p>
+  -->
 
 </div>
